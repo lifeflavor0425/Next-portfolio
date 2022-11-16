@@ -36,7 +36,7 @@ export default function Projects({ projects }) {
   );
 }
 //
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const options = {
     method: "POST",
     headers: {
@@ -62,6 +62,7 @@ export async function getServerSideProps() {
   );
   const projects = await res.json();
   return {
-    props: { projects }, // will be passed to the page component as props
+    props: { projects },
+    revalidate: 1, // 데이터 변경이 있으면 갱신 1초 마다 - 갱신 주기 설정 가능
   };
 }
