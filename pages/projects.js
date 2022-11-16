@@ -36,7 +36,7 @@ export default function Projects({ projects }) {
   );
 }
 //
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const options = {
     method: "POST",
     headers: {
