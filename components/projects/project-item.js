@@ -25,13 +25,10 @@ export default function ProjectItem({ data }) {
       endDateStringArray[2]
     );
 
-    console.log(`startDate: ${startDate}`);
-    console.log(`endDate: ${endDate}`);
 
     const diffInMs = Math.abs(endDate - startDate);
     const result = diffInMs / (1000 * 60 * 60 * 24);
 
-    console.log(`기간 : ${result}`);
     return result;
   };
 
@@ -43,9 +40,9 @@ export default function ProjectItem({ data }) {
         width={500}
         height={500}
         objectFit="cover"
+        layout="responsive"
         quality={100}
         alt="cover image"
-        layout="responsive"
         priority
       />
       <div className="flex flex-col p-4">
@@ -57,7 +54,7 @@ export default function ProjectItem({ data }) {
         </h3>
         <a href={GitHubLink}>깃허브 바로가기</a>
         <a href={URL}> 웹 싸이트 바로가기 </a>
-        <div className="flex items-start mt-2">
+        <div className="flex items-start mt-2 overflow-auto">
           {projectTags.map((tag) => (
             <h1
               className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
