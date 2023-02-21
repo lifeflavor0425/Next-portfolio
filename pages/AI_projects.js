@@ -5,11 +5,10 @@ import ProjectItem from "../components/projects/project-item";
 import Link from "next/link";
 
 export default function Projects({ projects }) {
-  const fe_projects = projects.results.filter((x) => {
-    console.log(x.properties.name.title[0].plain_text)
-      return x.properties.name.title[0].plain_text.search('[FE]') == 1
+  const ai_projects = projects.results.filter((x) => {
+      return x.properties.name.title[0].plain_text.search('[AI]') == 1
   })
-  console.log('FE \t ', fe_projects)
+  console.log('AI \t ', ai_projects)
   return (
     <>
       <Layout>
@@ -36,13 +35,13 @@ export default function Projects({ projects }) {
           </nav>
           <h1 className="text-4xl font-bold sm:text-6xl">
             {" "}
-            FE 총 프로젝트 :{" "}
+            AI 총 프로젝트 :{" "}
             <span className="pl-4 text-yellow-500">
-              {fe_projects.length}
+              {ai_projects.length}
             </span>
           </h1>
           <div className="grid grid-cols-1 m-6 py-10  md:grid-cols-2 gap-8 w-full">
-            {fe_projects.map((aProject) => (
+            {ai_projects.map((aProject) => (
               <ProjectItem key={aProject.id} data={aProject} />
               ))}
           </div>

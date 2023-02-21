@@ -35,11 +35,11 @@ export default function ProjectItem({ data }) {
   return (
     <div className="project-card">
       <Image
-        className="rounded-t-xl"
+        className="rounded-t-xl min-h-[40%] max-h-[40%]"
         src={imgSrc}
         width={500}
         height={500}
-        objectFit="cover"
+        // objectFit="cover"
         layout="responsive"
         quality={100}
         alt="cover image"
@@ -49,19 +49,19 @@ export default function ProjectItem({ data }) {
         <h1 className="text-2xl font-bold">{projectTitle}</h1>
         <h3 className="mt-4 text-xl">{description}</h3>
         <h3 className="my-1">
-          작업기간 :{projectDateStart}~{projectDateEnd} (
+          작업기간 : {projectDateStart}~{projectDateEnd} (
           {calculatedPeriod(projectDateStart, projectDateEnd)}일)
         </h3>
         <a href={GitHubLink}>깃허브 바로가기</a>
         <a href={URL}> 웹 싸이트 바로가기 </a>
         <div className="flex items-start mt-2 overflow-auto">
           {projectTags.map((tag) => (
-            <h1
-              className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+            <h4
+              className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30 "
               key={tag.id}
             >
               {tag.name}
-            </h1>
+            </h4>
           ))}
         </div>
       </div>

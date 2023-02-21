@@ -16,7 +16,7 @@
             hover:shadow-lg
             dark:border-gray-200/50
             dark:hover:shadow-gray-400/40
-
+            overflow-auto
             hover:text-blue-600;
 }
 
