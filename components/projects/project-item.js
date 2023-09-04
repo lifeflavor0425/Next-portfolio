@@ -9,7 +9,7 @@ export default function ProjectItem({ data }) {
   const description = data.properties.description.rich_text[0].plain_text;
   const projectTags = data.properties.tags.multi_select;
   const imgSrc = data.cover?.file?.url || data.cover?.external.url;
-  const portFolio = data.properties.portfolio_URL?.url;
+
 
   const calculatedPeriod = (start, end) => {
     const startDateStringArray = start.split("-");
@@ -54,7 +54,6 @@ export default function ProjectItem({ data }) {
           {calculatedPeriod(projectDateStart, projectDateEnd)}일)
         </h3>
         <a href={GitHubLink}>깃허브 바로가기</a>
-        <a href={portFolio}> 포트폴리오 바로가기</a>
         <a href={URL}> 보고서 || PPT || 웹 싸이트 바로가기 </a>
         <div className="flex items-start mt-2 overflow-auto">
           {projectTags.map((tag) => (
