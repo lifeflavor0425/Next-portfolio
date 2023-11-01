@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function ProjectItem({ data }) {
   const projectTitle = data.properties.name.title[0].plain_text;
@@ -35,17 +35,19 @@ export default function ProjectItem({ data }) {
 
   return (
     <div className="project-card">
-      <Image
-        className="rounded-t-xl min-h-[40%] max-h-[40%]"
-        src={imgSrc}
-        width={500}
-        height={500}
-        // objectFit="cover"
-        layout="responsive"
-        quality={100}
-        alt="cover image"
-        priority
-      />
+      <div>
+        <Image
+          className="rounded-t-xl min-h-[40%] max-h-[40%]"
+          src={imgSrc}
+          width={500}
+          height={500}
+          // objectFit="cover"
+          layout="responsive"
+          quality={100}
+          alt="cover image"
+          priority
+        />
+      </div>
       <div className="flex flex-col p-4">
         <h1 className="text-2xl font-bold">{projectTitle}</h1>
         <h3 className="mt-4 text-xl">{description}</h3>

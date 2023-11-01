@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function Projects({ projects }) {
   const fe_projects = projects.results.filter((x) => {
-    console.log(x.properties.name.title[0].plain_text)
       return x.properties.name.title[0].plain_text.search('[FE]') == 1
   })
   console.log('FE \t ', fe_projects)
