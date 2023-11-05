@@ -40,7 +40,7 @@ export default function Projects({ projects }) {
               {fe_projects.length}
             </span>
           </h1>
-          <div className="grid grid-cols-1 m-6 py-10  md:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 m-6 py-10  md:grid-cols-2 gap-8 w-9/12">
             {fe_projects.map((aProject) => (
               <ProjectItem key={aProject.id} data={aProject} />
               ))}

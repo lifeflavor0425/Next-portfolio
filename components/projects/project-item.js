@@ -37,15 +37,15 @@ export default function ProjectItem({ data }) {
     <div className="project-card">
       <div>
         <Image
-          className="rounded-t-xl min-h-[40%] max-h-[40%]"
+          className="rounded-t-xl"
           src={imgSrc}
-          width={500}
-          height={500}
-          // objectFit="cover"
+          width={60}
+          height={30}
+          // objectFit="contain"
           layout="responsive"
-          quality={100}
+          quality={50}
           alt="cover image"
-          priority
+          priority={true}
         />
       </div>
       <div className="flex flex-col p-4">
@@ -57,10 +57,10 @@ export default function ProjectItem({ data }) {
         </h3>
         <a href={GitHubLink}>깃허브 바로가기</a>
         <a href={URL}> 보고서 || PPT || 웹 싸이트 바로가기 </a>
-        <div className="flex items-start mt-2 overflow-auto">
+        <div className="flex flex-wrap items-start mt-2 ">
           {projectTags.map((tag) => (
             <h4
-              className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30 "
+              className="px-2 py-1 m-1 rounded-md bg-sky-200 dark:bg-sky-700 w-auto "
               key={tag.id}
             >
               {tag.name}
